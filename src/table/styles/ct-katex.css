@@ -1,0 +1,7 @@
+.falign .katex-display > .katex {text-align:left;}
+.ralign .katex-display > .katex {text-align:right;}
+.table-mathbox  tr td{vertical-align: baseline;} /* baseline aligned text and formula in table cell*/
+
+/*
+Only used with the table macro + a KaTeX plugin providing <$latex> (see ct-formats-math)
+*/

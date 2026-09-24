@@ -1,0 +1,63 @@
+title: $:/plugins/nikorion/table/language/en-GB/readme
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+Renders a static, read-only HTML table from a block of CSV text typed in a tiddler's body — no filter, no per-row tiddler, nothing stored. Extracted from [[Shiraz|https://github.com/kookma/TW-Shiraz]]'s `table-csv` macro (part of its `ct-*`/create-table feature) as an independent plugin, with no dependency on Shiraz itself. For an editable table backed by tiddlers, see the sibling plugin [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]] instead.
+
+! Usage
+
+The CSV data lives in the same tiddler as the `<<table>>` call, wrapped in `@@.tblcsv-block ... @@`:
+
+```
+@@.tblcsv-block
+Title,Status,Priority
+Buy milk,open,high
+Call Alice,done,normal
+@@
+
+<<table>>
+```
+
+! Parameters
+
+|!Parameter |!Default |!Description |
+|`tiddler` |current tiddler |title of the tiddler holding the `@@.tblcsv-block ... @@` data block |
+|`delimiter` |`","` |field separator; use `\t` for tab-delimited data |
+|`sortType` |`"alphanumeric"` |sort comparison used when a column header is clicked — space-separated, one per column (e.g. `"alphanumeric number date"`), the last one repeats for any extra column |
+|`format` |`""` |space-separated format procedure name per column (e.g. `"text number date"`) — see ''Column formats'' below; defaults to `text` for every column |
+|`caption` |`""` |name of a procedure/variable rendered as the table caption |
+|`class` |`""` |CSS class(es) applied to the `<table>` element |
+|`header` |`"yes"` |treat the data block's first line as a header row (clickable, sortable) instead of data |
+|`stateTiddler` |`"01"` |key used to store this table's current sort — set it when the same tiddler holds more than one `<<table>>` |
+|`id` |`""` |suffix on the `@@.tblcsv-block ... @@` marker, for picking one data block out of several in the same tiddler (`@@.tblcsv-block.<id> ... @@`) |
+|`dclass` |`"tblcsv-block"` |CSS class used as the data-block marker itself — change it (together with `id`, or on its own) to target a specific block when several coexist |
+
+! Column formats
+
+Each column can be rendered through a named procedure, given in `format` as a space-separated list matched to the columns in order (short lists repeat their last entry for any remaining column):
+
+|!Name |!Renders |
+|`text` (default) |plain text |
+|`code` |plain text in `<code>` |
+|`transclude` |the entry treated as a tiddler title, transcluding its `title` field |
+|`date` |`YYYY-0MM-0DD`, entry read as a TiddlyWiki or ISO date |
+|`shortdate` |`mmm DDth, YYYY` |
+|`longdate` |`DDD, MMM 0DD, YYYY` |
+|`email` |`mailto:` link |
+|`rate` |one star icon per `*` character in the entry |
+|`checkbox` |a disabled checkbox, checked when the entry is `x`, unchecked when `-`, blank otherwise |
+|`todo` |same as `checkbox` but clickable — toggles the entry between `x` and `-` in the source data block |
+|`katex`, `katex-inline`, `pu`, `equation` |entry rendered as KaTeX (block, inline, physical unit, numbered equation) — requires a KaTeX plugin providing the `<$latex>` widget (none bundled here); without one these render nothing, same as in Shiraz |
+
+Add your own by tagging a tiddler `$:/plugins/nikorion/table/procedures/ct-formats-<name>` (any title under that prefix) defining a `\procedure <your-format-name>()` that reads the `<<entry>>` variable — it is picked up automatically, the same way the built-in ones are.
+
+! Compatibility
+
+No name collision with Shiraz if both are installed: Shiraz's own static-table macro is `<<table-csv>>`, this plugin's is `<<table>>`; CSS classes (`tblcsv-*`), state tiddler (`$:/state/nikorion/table/…`) and procedure titles are all under this plugin's own namespace.
+
+Not ported from Shiraz: the `nomenclature`/`mathbox`/`subscripts`/`superscripts` convenience wrappers around `table-csv` (Shiraz's `ct-apps.tid`) — niche, KaTeX-dependent, and easy to write yourself as a thin `<$transclude $variable="table" format="..." class="..."/>` wrapper if needed.
+
+! Requirements
+
+TiddlyWiki >= 5.3.5.

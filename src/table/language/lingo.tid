@@ -1,0 +1,16 @@
+title: $:/plugins/nikorion/table/language/lingo
+tags: $:/tags/Global
+
+<!-- named tablecsv-lingo, not table-lingo: the sibling TW-Dynamic-Table plugin already
+     defines a global `table-lingo` procedure of its own (kept from before this plugin's
+     `table` short name was freed up) — a same-named one here would silently shadow it
+     if both plugins are installed together. Only one string needs this (the settings
+     tab caption), so no -text/-value variants are provided. -->
+\procedure tablecsv-lingo(title)
+\whitespace trim
+<$let _lang={{{ [[$:/language]get[text]get[name]else[en-GB]] }}}>
+<$transclude $tiddler={{{ [[$:/plugins/nikorion/table/language/]addsuffix<_lang>addsuffix[/]addsuffix<title>] }}}>
+<$transclude $tiddler={{{ [[$:/plugins/nikorion/table/language/en-GB/]addsuffix<title>] }}}/>
+</$transclude>
+</$let>
+\end

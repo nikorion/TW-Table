@@ -1,0 +1,8 @@
+title: $:/plugins/nikorion/table/procedures/ct-formats-basic
+type: text/vnd.tiddlywiki
+
+\procedure text() <$text text=<<entry>>/>
+\procedure code() <code><<text>></code>
+\procedure transclude() <$transclude tiddler=<<entry>> field="title"/>
+
+<!-- these procedures are used by the table macro to display entries -->

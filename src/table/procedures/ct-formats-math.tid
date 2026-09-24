@@ -1,0 +1,14 @@
+title: $:/plugins/nikorion/table/procedures/ct-formats-math
+type: text/vnd.tiddlywiki
+
+\procedure katex()  <span class="falign"><$latex text=<<entry>> displayMode="true"></$latex></span>
+\procedure katex-inline() <$latex text=<<entry>> displayMode="false"></$latex>
+\procedure pu() <$latex text=`\pu{$(entry)$}` displayMode="false"></$latex>
+\procedure equation() <$latex text=`\begin{equation}$(entry)$\end{equation}` displayMode="true"></$latex>
+
+<!--
+- these procedures are used by the table macro to display entries as KaTeX
+- pu stands for physical units
+- the math formatting requires a KaTeX plugin providing the <$latex> widget (none bundled here) — degrades to a missing-widget notice without one, same as Shiraz
+- see $:/plugins/nikorion/table/styles/ct-katex
+-->
