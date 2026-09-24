@@ -43,6 +43,7 @@ src/table/
     ct-tables.css(+.meta)  ← masque les <p> générés par @@…@@, capitalise les boutons d'en-tête
     ct-star.css(+.meta)    ← icône étoile (notation)
     ct-katex.css(+.meta)   ← alignement KaTeX, cellules .table-mathbox
+    table-variants.css(+.meta) ← `table-borderless`/`table-hover`/`thead-*`/`table-striped-*`/`table-rounded*`… : copie de celle de TW-Dynamic-Table (elle-même portée de Shiraz `styles/tables.css`) moins les règles `tfoot-*`/pied de tableau (`tbldyn-*`), sans objet en statique. Copie assumée (pas de plugin partagé) : si les deux sont installés les règles communes sont chargées deux fois ; **toute correction de variante à répercuter dans les deux fichiers**. Tiny-Bootstrap ne les fournit pas
   language/
     lingo.tid                      ← tablecsv-lingo (une seule chaîne : le libellé de l'onglet Réglages)
     en-GB|fr-FR/{readme,history,license}.tid, settings.multids

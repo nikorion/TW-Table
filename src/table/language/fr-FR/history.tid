@@ -2,3 +2,4 @@ title: $:/plugins/nikorion/table/language/fr-FR/history
 type: text/vnd.tiddlywiki
 
 * ''0.1.0'' -- 2026.09.24 -- Bonjour ! Table statique extraite de la macro `table-csv` (`ct-*`) de [[Shiraz|https://github.com/kookma/TW-Shiraz]] sous forme de plugin indépendant : affiche un tableau HTML en lecture seule depuis un bloc CSV saisi dans un tiddler, colonnes triables et procédures de format par colonne (texte, date, email, notation étoilée, case à cocher/todo, KaTeX). Reprend le nom `TW-Table` libéré lors du renommage du plugin de tableau dynamique en [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]].
+* ''0.1.0'' -- 2026.09.25 -- Ajout de `table-variants.css` (intégré, aucune dépendance) : `table-borderless`, `table-hover`, `table-striped-row/col`, `table-lines`, `table-sides`, `table-rounded*`, `thead-*` et plus, communes avec TW-Dynamic-Table (sans ses règles `tfoot-*`, propres au pied de tableau).

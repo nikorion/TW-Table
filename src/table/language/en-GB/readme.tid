@@ -52,9 +52,29 @@ Each column can be rendered through a named procedure, given in `format` as a sp
 
 Add your own by tagging a tiddler `$:/plugins/nikorion/table/procedures/ct-formats-<name>` (any title under that prefix) defining a `\procedure <your-format-name>()` that reads the `<<entry>>` variable — it is picked up automatically, the same way the built-in ones are.
 
+! Styling the table (`class=`)
+
+`class=` on `<<table>>` takes any CSS class. Table variants ship built into this plugin (no dependency), ported from Shiraz's `styles/tables.css`:
+
+|!Class |!What it does |
+|`table-hover` |highlight the row under the mouse |
+|`table-hover-yellow`, `table-hover-cyan` |same, with a yellow/cyan highlight instead |
+|`table-striped-row` |alternate row background colour |
+|`table-striped-col` |alternate column background colour |
+|`table-borderless` |remove all cell borders |
+|`table-lines` |horizontal rule under each row only (combine with `table-borderless`) |
+|`table-sides` |vertical rules on the far left and far right of the body rows only (combine with `table-borderless`) |
+|`table-center` |center the table in its container |
+|`table-caption-top` |move the caption above the table |
+|`table-tight` |smaller font size |
+|`table-rounded`, `table-rounded-0` … `table-rounded-5` |round the outer corners (shows where cells have a background, so combine with `thead-*` and `table-borderless`) |
+|`thead-primary`, `thead-secondary`, `thead-success`, `thead-warning`, `thead-danger`, `thead-info`, `thead-dark`, `thead-light` |colour the header row |
+
+Bootstrap-style utility classes (`w-100`, `text-center`, `border`…) come from [[Shiraz|https://github.com/kookma/TW-Shiraz]] or [[TW-Tiny-Bootstrap|https://github.com/nikorion/TW-Tiny-Bootstrap]], not from this plugin.
+
 ! Compatibility
 
-No name collision with Shiraz if both are installed: Shiraz's own static-table macro is `<<table-csv>>`, this plugin's is `<<table>>`; CSS classes (`tblcsv-*`), state tiddler (`$:/state/nikorion/table/…`) and procedure titles are all under this plugin's own namespace.
+The variant classes above are the same as the ones shipped by [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]] (which adds `tfoot-*` and footer rules): installing both loads the shared rules twice, harmlessly. No name collision with Shiraz if both are installed: Shiraz's own static-table macro is `<<table-csv>>`, this plugin's is `<<table>>`; CSS classes (`tblcsv-*`), state tiddler (`$:/state/nikorion/table/…`) and procedure titles are all under this plugin's own namespace.
 
 Not ported from Shiraz: the `nomenclature`/`mathbox`/`subscripts`/`superscripts` convenience wrappers around `table-csv` (Shiraz's `ct-apps.tid`) — niche, KaTeX-dependent, and easy to write yourself as a thin `<$transclude $variable="table" format="..." class="..."/>` wrapper if needed.
 

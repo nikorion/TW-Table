@@ -1,0 +1,37 @@
+draft.of: Playground
+draft.title: Playground
+modified: 20260924223101076
+title: Draft of 'Playground'
+type: text/vnd.tiddlywiki
+
+Live examples of the `<<table>>` macro rendering a static table from a CSV block.
+
+!! Basic table, sortable columns
+
+@@.tblcsv-block
+Title,Status,Priority
+Buy milk,open,high
+Call Alice,done,normal
+Write report,open,low
+@@
+
+<<table>>
+
+!! Custom delimiter, no header, right-aligned via class
+
+@@.tblcsv-block.no-header
+Alice|Paris|32
+Bob|Lyon|28
+@@
+
+<<table tiddler:"Playground" id:"no-header" delimiter:"|" header:"no" class:"table-borderless">>
+
+!! Column formats: date, email, rate, checkbox
+
+@@.tblcsv-block.formats
+Task,Due,Contact,Rating,Done
+Ship release,20260930,team@example.com,***,x
+Write docs,20261015,team@example.com,**,-
+@@
+
+<<table tiddler:"Playground" id:"formats" format:"text date email rate checkbox">>

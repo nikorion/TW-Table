@@ -2,3 +2,4 @@ title: $:/plugins/nikorion/table/language/en-GB/history
 type: text/vnd.tiddlywiki
 
 * ''0.1.0'' -- 2026.09.24 -- Hello! Static Table extracted from [[Shiraz|https://github.com/kookma/TW-Shiraz]]'s `table-csv` (`ct-*`) as an independent plugin: renders a read-only HTML table from a CSV block typed in a tiddler, with sortable columns and per-column format procedures (text, date, email, rate, checkbox/todo, KaTeX). Reuses the `TW-Table` name freed up when the Dynamic Table plugin was renamed to [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]].
+* ''0.1.0'' -- 2026.09.25 -- Added `table-variants.css` (built-in, no dependency): `table-borderless`, `table-hover`, `table-striped-row/col`, `table-lines`, `table-sides`, `table-rounded*`, `thead-*` and more, shared with TW-Dynamic-Table (minus its footer-only `tfoot-*` rules).
