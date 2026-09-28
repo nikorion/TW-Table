@@ -1,0 +1,6 @@
+title: $:/nikorion/language/fr-FR/Playground/
+
+Intro: Exemples concrets de la macro `<<table>>`, qui rend un tableau statique à partir d'un bloc CSV.
+BasicHeading: ! Tableau simple, colonnes triables
+CustomHeading: ! Délimiteur personnalisé, sans en-tête, aligné à droite via une classe
+FormatsHeading: ! Formats de colonnes : date, e-mail, note, case à cocher

@@ -4,7 +4,8 @@
     "tiddlywiki/filesystem",
     "tiddlywiki/tiddlyweb",
     "nikorion/table",
-    "nikorion/tiny-bootstrap"
+    "nikorion/tiny-bootstrap",
+    "nikorion/detect-language"
   ],
   "themes": [
     "tiddlywiki/vanilla"

@@ -5,7 +5,7 @@ A [TiddlyWiki](https://tiddlywiki.com) plugin providing `<<table>>`: a static, r
 Extracted from [Shiraz](https://github.com/kookma/TW-Shiraz)'s `table-csv` feature (by Mohammad Rahmani) as an independent plugin, with no dependency on Shiraz itself. For an editable table backed by tiddlers instead, see the sibling plugin [TW-Dynamic-Table](https://github.com/nikorion/TW-Dynamic-Table).
 
 ```
-@@.tblcsv-block
+@@.nk-table-block
 Title,Status
 Buy milk,open
 @@

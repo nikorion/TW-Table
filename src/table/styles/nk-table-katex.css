@@ -3,5 +3,5 @@
 .table-mathbox  tr td{vertical-align: baseline;} /* baseline aligned text and formula in table cell*/
 
 /*
-Only used with the table macro + a KaTeX plugin providing <$latex> (see ct-formats-math)
+Only used with the table macro + a KaTeX plugin providing <$latex> (see nk-table-formats-math)
 */

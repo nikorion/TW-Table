@@ -1,0 +1,20 @@
+/* todo section ------------*/
+.tc-tiddler-body p.nk-table-block,
+.tc-tiddler-preview-preview p.nk-table-block {
+	display:none;
+}
+
+/* button caption style on the table header
+this style can be overriden locally by user */
+table thead .nk-table-header th button {
+    text-transform: capitalize; /* Capitalize the first letter of any word*/
+}
+
+/* sort arrow of the header buttons (own copy: TW-Dynamic-Table styles only its own class) */
+button.nk-table-sort-svg > svg { text-shadow: none; fill:#000000; height:10px; padding:0 0 2px 0; }
+
+/*
+Only used with the table macro (static, CSV-sourced)
+See $:/plugins/nikorion/table/procedures/nk-table
+The @@ produces a p tag.
+*/

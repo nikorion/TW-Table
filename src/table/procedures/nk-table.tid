@@ -1,10 +1,10 @@
 tags: $:/tags/Global
-title: $:/plugins/nikorion/table/procedures/ct-table-csv
+title: $:/plugins/nikorion/table/procedures/nk-table
 type: text/vnd.tiddlywiki
 
-\procedure table( tiddler:"", delimiter:",", sortType:"alphanumeric", format:"", caption:"", class:"", header:"yes", stateTiddler:"", id:"", dclass:"tblcsv-block" )
+\procedure table( tiddler:"", delimiter:",", sortType:"alphanumeric", format:"", caption:"", class:"", header:"yes", stateTiddler:"", id:"", dclass:"nk-table-block" )
 \whitespace trim
-\import [all[tiddlers+shadows]prefix[$:/plugins/nikorion/table/procedures/ct-formats]!is[draft]]
+\import [all[tiddlers+shadows]prefix[$:/plugins/nikorion/table/procedures/nk-table-formats]!is[draft]]
 
 <$let  src          = {{{ [<tiddler>is[tiddler]else<currentTiddler>] }}}
        stateTiddler = {{{ [<stateTiddler>!is[blank]else[01]]    }}}
@@ -35,9 +35,9 @@ type: text/vnd.tiddlywiki
 					<!--create table header-->
 					<thead>
 						<$list filter="[subfilter<allRows>first[]]" variable=row >
-							<tr class="tblcsv-header">
+							<tr class="nk-table-header">
 								<$list filter="[<row>splitregexp<delimiter>!is[blank]trim[]]" variable=currentColumn>
-									<$transclude $tiddler="$:/plugins/nikorion/table/procedures/ct-header-template" />
+									<$transclude $tiddler="$:/plugins/nikorion/table/procedures/nk-table-header-template" />
 								</$list>
 						</tr>
 						</$list>

@@ -7,10 +7,10 @@ Affiche un tableau HTML statique en lecture seule depuis un bloc de texte CSV sa
 
 ! Utilisation
 
-Les données CSV vivent dans le même tiddler que l'appel `<<table>>`, entourées de `@@.tblcsv-block ... @@` :
+Les données CSV vivent dans le même tiddler que l'appel `<<table>>`, entourées de `@@.nk-table-block ... @@` :
 
 ```
-@@.tblcsv-block
+@@.nk-table-block
 Titre,Statut,Priorité
 Acheter du lait,ouvert,haute
 Appeler Alice,fait,normale
@@ -22,7 +22,7 @@ Appeler Alice,fait,normale
 ! Paramètres
 
 |!Paramètre |!Défaut |!Description |
-|`tiddler` |tiddler courant |titre du tiddler contenant le bloc de données `@@.tblcsv-block ... @@` |
+|`tiddler` |tiddler courant |titre du tiddler contenant le bloc de données `@@.nk-table-block ... @@` |
 |`delimiter` |`","` |séparateur de champ ; utiliser `\t` pour des données tabulées |
 |`sortType` |`"alphanumeric"` |comparaison de tri utilisée au clic sur un en-tête de colonne — séparée par des espaces, une par colonne (ex. `"alphanumeric number date"`), la dernière se répète pour toute colonne excédentaire |
 |`format` |`""` |nom de procédure de format par colonne, séparés par des espaces (ex. `"text number date"`) — voir ''Formats de colonne'' plus bas ; par défaut `text` pour chaque colonne |
@@ -30,8 +30,8 @@ Appeler Alice,fait,normale
 |`class` |`""` |classe(s) CSS appliquée(s) à l'élément `<table>` |
 |`header` |`"yes"` |traiter la première ligne du bloc de données comme un en-tête (cliquable, triable) plutôt que comme une donnée |
 |`stateTiddler` |`"01"` |clé utilisée pour stocker le tri courant de ce tableau — à définir quand un même tiddler contient plusieurs `<<table>>` |
-|`id` |`""` |suffixe sur le marqueur `@@.tblcsv-block ... @@`, pour choisir un bloc de données parmi plusieurs dans le même tiddler (`@@.tblcsv-block.<id> ... @@`) |
-|`dclass` |`"tblcsv-block"` |classe CSS utilisée comme marqueur du bloc de données lui-même — la changer (avec `id`, ou seule) permet de cibler un bloc précis quand plusieurs coexistent |
+|`id` |`""` |suffixe sur le marqueur `@@.nk-table-block ... @@`, pour choisir un bloc de données parmi plusieurs dans le même tiddler (`@@.nk-table-block.<id> ... @@`) |
+|`dclass` |`"nk-table-block"` |classe CSS utilisée comme marqueur du bloc de données lui-même — la changer (avec `id`, ou seule) permet de cibler un bloc précis quand plusieurs coexistent |
 
 ! Formats de colonne
 
@@ -50,7 +50,7 @@ Chaque colonne peut être rendue via une procédure nommée, donnée dans `forma
 |`todo` |identique à `checkbox` mais cliquable — bascule l'entrée entre `x` et `-` dans le bloc de données source |
 |`katex`, `katex-inline`, `pu`, `equation` |entrée rendue en KaTeX (bloc, en ligne, unité physique, équation numérotée) — nécessite un plugin KaTeX fournissant le widget `<$latex>` (aucun fourni ici) ; sans lui ces formats ne rendent rien, comme chez Shiraz |
 
-Pour en ajouter un, tagger un tiddler `$:/plugins/nikorion/table/procedures/ct-formats-<nom>` (tout titre sous ce préfixe) définissant une `\procedure <votre-format>()` qui lit la variable `<<entry>>` — il est repris automatiquement, comme les formats intégrés.
+Pour en ajouter un, tagger un tiddler `$:/plugins/nikorion/table/procedures/nk-table-formats-<nom>` (tout titre sous ce préfixe) définissant une `\procedure <votre-format>()` qui lit la variable `<<entry>>` — il est repris automatiquement, comme les formats intégrés.
 
 ! Styliser le tableau (`class=`)
 
@@ -74,7 +74,7 @@ Les classes utilitaires façon Bootstrap (`w-100`, `text-center`, `border`…) v
 
 ! Compatibilité
 
-Les classes de variantes ci-dessus sont les mêmes que celles livrées par [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]] (qui ajoute `tfoot-*` et les règles de pied) : installer les deux charge les règles communes deux fois, sans conséquence. Aucune collision de nom avec Shiraz si les deux sont installés : la macro de tableau statique de Shiraz est `<<table-csv>>`, celle de ce plugin est `<<table>>` ; classes CSS (`tblcsv-*`), tiddler d'état (`$:/state/nikorion/table/…`) et titres de procédures sont tous dans l'espace de noms propre de ce plugin.
+Les classes de variantes ci-dessus sont les mêmes que celles livrées par [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]] (qui ajoute `tfoot-*` et les règles de pied) : installer les deux charge les règles communes deux fois, sans conséquence. Aucune collision de nom avec Shiraz si les deux sont installés : la macro de tableau statique de Shiraz est `<<table-csv>>`, celle de ce plugin est `<<table>>` ; classes CSS (`nk-table-*`), tiddler d'état (`$:/state/nikorion/table/…`) et titres de procédures sont tous dans l'espace de noms propre de ce plugin.
 
 Non porté depuis Shiraz : les enrobages `nomenclature`/`mathbox`/`subscripts`/`superscripts` autour de `table-csv` (`ct-apps.tid` chez Shiraz) — d'usage confidentiel, dépendants de KaTeX, et faciles à récrire soi-même via un enrobage `<$transclude $variable="table" format="..." class="..."/>` si besoin.
 

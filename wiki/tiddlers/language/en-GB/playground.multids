@@ -1,0 +1,6 @@
+title: $:/nikorion/language/en-GB/Playground/
+
+Intro: Live examples of the `<<table>>` macro rendering a static table from a CSV block.
+BasicHeading: ! Basic table, sortable columns
+CustomHeading: ! Custom delimiter, no header, right-aligned via class
+FormatsHeading: ! Column formats: date, email, rate, checkbox

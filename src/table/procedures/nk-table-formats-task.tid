@@ -1,4 +1,4 @@
-title: $:/plugins/nikorion/table/procedures/ct-formats-task
+title: $:/plugins/nikorion/table/procedures/nk-table-formats-task
 type: text/vnd.tiddlywiki
 
 \procedure checkbox()

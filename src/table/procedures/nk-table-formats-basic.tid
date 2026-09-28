@@ -1,4 +1,4 @@
-title: $:/plugins/nikorion/table/procedures/ct-formats-basic
+title: $:/plugins/nikorion/table/procedures/nk-table-formats-basic
 type: text/vnd.tiddlywiki
 
 \procedure text() <$text text=<<entry>>/>

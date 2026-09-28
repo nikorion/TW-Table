@@ -1,15 +1,15 @@
-title: $:/plugins/nikorion/table/procedures/ct-header-template
+title: $:/plugins/nikorion/table/procedures/nk-table-header-template
 type: text/vnd.tiddlywiki
 
 <th>
 <%if [<tempTableSort>getindex[sortIndex]match<currentColumn>] %><!--if table is sorted based on current column -->
 	<%if [<tempTableSort>getindex[hasnegate]match[false]] %><!--set negate for sort-->
-		<$button setTitle=<<tempTableSort>> setIndex="hasnegate" setTo="true" class="tbl-sort-svg tc-btn-invisible tc-tiddlylink" >
+		<$button setTitle=<<tempTableSort>> setIndex="hasnegate" setTo="true" class="nk-table-sort-svg tc-btn-invisible tc-tiddlylink" >
 			<$action-setfield $tiddler=<<tempTableSort>> $index="negate" $value="reverse"/>
 			<$transclude $tiddler=<<currentColumn>> $field=title $mode=inline/>&nbsp;{{$:/core/images/down-arrow}}
 		</$button>
 	<%elseif [<tempTableSort>getindex[hasnegate]match[true]] %><!--remove negate for sort-->
-		<$button setTitle=<<tempTableSort>> setIndex="hasnegate" setTo="false" class="tbl-sort-svg tc-btn-invisible tc-tiddlylink" >
+		<$button setTitle=<<tempTableSort>> setIndex="hasnegate" setTo="false" class="nk-table-sort-svg tc-btn-invisible tc-tiddlylink" >
 			<$action-setfield $tiddler=<<tempTableSort>> $index="negate" $value=""/>
 			<$transclude $tiddler=<<currentColumn>> $field=title $mode=inline/>&nbsp;{{$:/core/images/up-arrow}}
 		</$button>
