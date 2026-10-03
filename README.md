@@ -30,10 +30,10 @@ pnpm dev     # dev wiki + hot reload; the URL (random free port) is printed on s
 pnpm build   # dist/TW-Table-Plugin.json + docs/TW-Table-Wiki.html
 ```
 
-[↑ Back to contents](#contents)
+[↑](#contents "Back to contents")
 
 ## License
 
 MIT — see `LICENSE`.
 
-[↑ Back to contents](#contents)
+[↑](#contents "Back to contents")

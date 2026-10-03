@@ -30,10 +30,10 @@ pnpm dev     # wiki de dev + rechargement à chaud ; l'URL (port libre aléatoir
 pnpm build   # dist/TW-Table-Plugin.json + docs/TW-Table-Wiki.html
 ```
 
-[↑ Retour au sommaire](#sommaire)
+[↑](#sommaire "Retour au sommaire")
 
 ## Licence
 
 MIT — voir `LICENSE`.
 
-[↑ Retour au sommaire](#sommaire)
+[↑](#sommaire "Retour au sommaire")
