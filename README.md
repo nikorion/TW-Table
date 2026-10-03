@@ -17,11 +17,6 @@ Buy milk,open
 
 Full parameter list, column-format procedures and settings are documented in the plugin's own readme (`src/table/language/<lang>/readme.tid`), visible from the control panel's Plugins tab once installed.
 
-## Contents
-
-- [Development](#development)
-- [License](#license)
-
 ## Development
 
 ```sh
@@ -30,10 +25,6 @@ pnpm dev     # dev wiki + hot reload; the URL (random free port) is printed on s
 pnpm build   # dist/TW-Table-Plugin.json + docs/TW-Table-Wiki.html
 ```
 
-[↑](#contents "Back to contents")
-
 ## License
 
 MIT — see `LICENSE`.
-
-[↑](#contents "Back to contents")

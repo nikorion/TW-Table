@@ -17,11 +17,6 @@ Buy milk,open
 
 La liste complète des paramètres, les procédures de format de colonne et les réglages sont documentés dans le readme du plugin lui-même (`src/table/language/<lang>/readme.tid`), visible depuis l'onglet Plugins du panneau de contrôle une fois le plugin installé.
 
-## Sommaire
-
-- [Développement](#développement)
-- [Licence](#licence)
-
 ## Développement
 
 ```sh
@@ -30,10 +25,6 @@ pnpm dev     # wiki de dev + rechargement à chaud ; l'URL (port libre aléatoir
 pnpm build   # dist/TW-Table-Plugin.json + docs/TW-Table-Wiki.html
 ```
 
-[↑](#sommaire "Retour au sommaire")
-
 ## Licence
 
 MIT — voir `LICENSE`.
-
-[↑](#sommaire "Retour au sommaire")
