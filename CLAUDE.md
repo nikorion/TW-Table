@@ -54,11 +54,11 @@ src/table/
 
 wiki/                      ← wiki TW de dev : Playground.tid (anglais en dur, pas d'i18n)
 dist/                      ← généré par pnpm build, gitignored
-docs/                      ← TW-Table-Wiki.html standalone (distribution)
+docs/                      ← démo générée par `pnpm build` (`index.html` + moteur externe), gitignorée, publiée par la CI
 ```
 
 ## Spécificités dev
 - Aucun module JS → pas de `pnpm lint`.
 - HMR : tout est `.tid`/`.css`/`.multids`, poussé à chaud dans le navigateur déjà ouvert. Un changement de `plugin.info` reboote (nodemon).
-- `pnpm build` → `dist/TW-Table-Plugin.json` + `docs/TW-Table-Wiki.html`.
+- `pnpm build` → `dist/TW-Table-Plugin.json` + démo `docs/` (publiée par la CI : `../guides/publication.md`).
 - `pnpm build` validé (2026-09-24, aucune erreur de parsing wikitext) ; rendu visuel du Playground (`pnpm dev`) pas encore vérifié dans un navigateur.

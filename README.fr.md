@@ -22,8 +22,21 @@ La liste complète des paramètres, les procédures de format de colonne et les 
 ```sh
 pnpm install
 pnpm dev     # wiki de dev + rechargement à chaud ; l'URL (port libre aléatoire) s'affiche au démarrage
-pnpm build   # dist/TW-Table-Plugin.json + docs/TW-Table-Wiki.html
+pnpm build   # dist/TW-Table-Plugin.json + docs/ (wiki de démo, publié par la CI)
 ```
+
+## Installation
+
+**Démo en ligne** : [https://nikorion.github.io/TW-Table/](https://nikorion.github.io/TW-Table/) — pour essayer le plugin avant de l'installer.
+
+**Depuis la bibliothèque de plugins nikorion** (TiddlyWiki propose ensuite chaque nouvelle version en mise à jour) :
+
+1. Dans votre wiki, créer un tiddler tagué `$:/tags/PluginLibrary`, avec un champ `url` valant `https://nikorion.github.io/tw-dev/library/index.html` et une `caption` comme `nikorion`.
+2. Ouvrir *Panneau de configuration → Plugins → Obtenir d'autres plugins*, choisir la bibliothèque nikorion et installer **Table**.
+
+**À la main** : télécharger [`TW-Table-Plugin.json`](https://nikorion.github.io/TW-Table/TW-Table-Plugin.json) et le glisser-déposer sur votre wiki.
+
+Nécessite TiddlyWiki ≥ 5.3.5.
 
 ## Licence
 
