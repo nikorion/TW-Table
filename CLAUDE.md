@@ -58,7 +58,7 @@ docs/                      ← TW-Table-Wiki.html standalone (distribution)
 ```
 
 ## Spécificités dev
-- Aucun module JS → pas de `pnpm lint`, `nodemon.json` ne surveille que `plugin.info`.
+- Aucun module JS → pas de `pnpm lint`.
 - HMR : tout est `.tid`/`.css`/`.multids`, poussé à chaud dans le navigateur déjà ouvert. Un changement de `plugin.info` reboote (nodemon).
 - `pnpm build` → `dist/TW-Table-Plugin.json` + `docs/TW-Table-Wiki.html`.
 - `pnpm build` validé (2026-09-24, aucune erreur de parsing wikitext) ; rendu visuel du Playground (`pnpm dev`) pas encore vérifié dans un navigateur.
