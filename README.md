@@ -31,8 +31,8 @@ pnpm build   # dist/TW-Table-Plugin.json + docs/ (demo wiki, published by CI)
 
 **From the nikorion plugin library** (TiddlyWiki then offers each new version as an update):
 
-1. In your wiki, create a tiddler tagged `$:/tags/PluginLibrary`, with a field `url` set to `https://nikorion.github.io/tw-dev/library/index.html` and a `caption` such as `nikorion`.
-2. Open *Control Panel → Plugins → Get more plugins*, choose the nikorion library and install **Table**.
+1. On [nikorion.github.io/tw-plugins](https://nikorion.github.io/tw-plugins/), drag the **nikorion plugin library** button onto your wiki (once per wiki).
+2. Open *Control Panel → Plugins → Get more plugins → Open plugin library*, choose the nikorion tab and install **Table**.
 
 **By hand**: download [`TW-Table-Plugin.json`](https://nikorion.github.io/TW-Table/TW-Table-Plugin.json) and drag it onto your wiki.
 
