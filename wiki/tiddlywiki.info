@@ -13,10 +13,6 @@
   "languages": [
     "fr-FR"
   ],
-  "pluginPath": [
-    "../src",
-    "../../TW-Tiny-Bootstrap/src"
-  ],
   "config": {
     "retain-original-tiddler-path": true
   },
