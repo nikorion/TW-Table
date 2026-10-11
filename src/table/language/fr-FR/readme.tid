@@ -1,8 +1,6 @@
 title: $:/plugins/nikorion/table/language/fr-FR/readme
 type: text/vnd.tiddlywiki
 
-\whitespace trim
-
 Affiche un tableau HTML statique en lecture seule depuis un bloc de texte CSV saisi dans le corps d'un tiddler — pas de filtre, pas de tiddler par ligne, rien de stocké. Extrait de la macro `table-csv` de [[Shiraz|https://github.com/kookma/TW-Shiraz]] (partie de sa fonctionnalité `ct-*`/create-table) sous forme de plugin indépendant, sans dépendance à Shiraz lui-même. Pour un tableau éditable adossé à des tiddlers, voir le plugin frère [[TW-Dynamic-Table|https://github.com/nikorion/TW-Dynamic-Table]].
 
 ! Utilisation
