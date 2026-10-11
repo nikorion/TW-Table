@@ -2,6 +2,8 @@
 
 [English](README.md) · **Français**
 
+![Status](https://img.shields.io/badge/status-experimental-orange)
+
 Un plugin [TiddlyWiki](https://tiddlywiki.com) qui fournit `<<table>>` : un tableau HTML statique, en lecture seule, construit à partir d'un bloc CSV saisi dans le corps d'un tiddler — pas de filtre, pas de tiddler par ligne, rien n'est stocké.
 
 Extrait de la fonction `table-csv` de [Shiraz](https://github.com/kookma/TW-Shiraz) (de Mohammad Rahmani) pour en faire un plugin indépendant, sans aucune dépendance à Shiraz. Pour un tableau éditable reposant sur des tiddlers, voir le plugin voisin [TW-Dynamic-Table](https://github.com/nikorion/TW-Dynamic-Table).
